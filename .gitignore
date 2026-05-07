@@ -1,0 +1,61 @@
+# Dependencies
+node_modules/
+frontend/node_modules/
+
+# Build outputs
+dist/
+build/
+frontend/dist/
+frontend/build/
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.crt
+*.p12
+
+# Runtime data
+uploads/
+upload/
+backend/uploads/
+logs/
+*.log
+tmp/
+temp/
+*.sqlite
+*.db
+*.db-journal
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# Node
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+*.local
+
+# IDE and OS
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+.claude/
+
+# Archives and backups
+*.zip
+*.rar
+*.7z
+*.tar
+*.tar.gz
+*.bak
+backup/
