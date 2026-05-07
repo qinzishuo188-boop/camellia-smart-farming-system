@@ -1,0 +1,10 @@
+-- 山茶智耘数据库表结构由 SQLModel 管理。
+-- 初始化命令：
+--   cd backend
+--   python init_db.py
+--
+-- 生产环境建议使用 Alembic 管理迁移；当前版本启动时会自动创建以下核心表：
+-- users, organizations, plots, environment_records, growth_stages,
+-- decision_rules, decision_records, warning_records, growth_records,
+-- pest_disease_knowledge, diagnosis_records, farming_logs, files,
+-- knowledge_articles.
