@@ -360,25 +360,7 @@ Docker 部署后默认访问：
 - 100 条长势记录
 - 预警记录、农事日志、智能决策、病虫害知识库和知识文章示例数据
 
-本地默认数据库文件是运行时生成的 `camellia.db`，不会提交到 GitHub。别人下载项目后需要自己运行 `python init_db.py` 生成本地数据库。
-
-## 不上传的内容
-
-以下内容属于本地运行产物或敏感文件，不应该上传到 GitHub：
-
-```text
-node_modules/
-frontend/dist/
-.env
-camellia.db
-uploads/
-__pycache__/
-*.pem
-*.key
-*.log
-```
-
-这些文件已经在 `.gitignore` 中排除。别人下载项目后，通过安装依赖、初始化数据库和启动服务即可重新生成运行所需文件。
+运行 `python init_db.py` 后即可创建本地演示数据库。
 
 ## 常见问题
 
