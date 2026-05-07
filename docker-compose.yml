@@ -1,0 +1,35 @@
+services:
+  backend:
+    build: ./backend
+    environment:
+      DATABASE_URL: ${DATABASE_URL:-sqlite:///./data/camellia.db}
+      SECRET_KEY: ${SECRET_KEY:-change-this-secret-before-production}
+      ACCESS_TOKEN_EXPIRE_MINUTES: ${ACCESS_TOKEN_EXPIRE_MINUTES:-1440}
+      UPLOAD_DIR: ${UPLOAD_DIR:-uploads}
+      DEBUG: ${DEBUG:-false}
+      CORS_ORIGINS: ${CORS_ORIGINS:-http://localhost:8080,http://127.0.0.1:8080}
+      SYSTEM_MODE: ${SYSTEM_MODE:-demo}
+      DEEPSEEK_API_KEY: ${DEEPSEEK_API_KEY:-}
+      DEEPSEEK_API_BASE: ${DEEPSEEK_API_BASE:-https://api.deepseek.com/v1}
+      WXPUSHER_APP_TOKEN: ${WXPUSHER_APP_TOKEN:-}
+      SERVERCHAN_KEY: ${SERVERCHAN_KEY:-}
+      WECOM_CORP_ID: ${WECOM_CORP_ID:-}
+      WECOM_AGENT_SECRET: ${WECOM_AGENT_SECRET:-}
+      WECOM_AGENT_ID: ${WECOM_AGENT_ID:-0}
+    ports:
+      - "8000:8000"
+    volumes:
+      - backend_data:/app/data
+      - backend_uploads:/app/uploads
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    depends_on:
+      - backend
+    ports:
+      - "8080:80"
+
+volumes:
+  backend_data:
+  backend_uploads:
